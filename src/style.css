@@ -1,17 +1,11 @@
 /* ------------resetcss------------- */
-*,
-*::before,
-*::after {
+:where(*),
+:where(*::before),
+:where(*::after) {
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
-}
-
-a,
-*::before,
-*::after {
-  display: inline-block;
 }
 
 html,
@@ -21,34 +15,11 @@ body {
   line-height: 1;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: inherit;
-  font-size: inherit;
-}
-
 /* --------------------------- */
+
+:root {
+  --hover-color: #00acdc;
+}
 
 .header__content {
   padding-right: 50px;
@@ -64,11 +35,12 @@ h6 {
   font-size: 12px;
 }
 
-.menu__iteam {
+.menu__item {
   display: flex;
 }
 
 .menu__list {
+  list-style: none;
   padding-right: 20px;
 }
 
@@ -81,10 +53,12 @@ h6 {
   position: relative;
   align-items: center;
   height: 60px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .menu__link[data-qa='hover']:hover {
-  color: #00acdc;
+  color: var(--hover-color);
 }
 
 .menu__link.is-active::after {
@@ -95,9 +69,14 @@ h6 {
   width: 100%;
   height: 4px;
   border-radius: 8px;
-  background-color: #00acdc;
+  background-color: var(--hover-color);
 }
 
 .is-active {
-  color: #00acdc;
+  color: var(--hover-color);
+}
+
+.header__logo {
+  color: inherit;
+  text-decoration: none;
 }
